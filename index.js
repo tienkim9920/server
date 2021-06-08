@@ -6,7 +6,7 @@ const http = require('http').Server(app);
 const cors = require("cors");
 
 var upload = require('express-fileupload');
-const port = 8000
+const PORT = process.env.PORT || 8000;
 
 const ProductAPI = require('./API/Router/product.router')
 const UserAPI = require('./API/Router/user.router')
@@ -58,6 +58,6 @@ app.use('/api/admin/Coupon', Coupon)
 app.use('/api/admin/Sale', Sale)
 
 
-http.listen(port, () => {
-  console.log('listening on *: ' + port);
+http.listen(PORT, () => {
+  console.log('listening on *: ' + PORT);
 });
